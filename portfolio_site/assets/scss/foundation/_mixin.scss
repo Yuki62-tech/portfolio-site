@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin gridCenter {
+    display: grid;
+    place-content: center;
+}
+
+@mixin lineBreak {
+    content: "\A";
+    white-space: pre;
+}
