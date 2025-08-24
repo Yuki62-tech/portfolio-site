@@ -400,6 +400,10 @@ img {
   background: linear-gradient(60deg, rgb(84, 58, 183) 0%, rgb(0, 172, 193) 100%);
 }
 
+.l-section {
+  margin-top: 60px;
+  padding: 0 4%;
+}
 .l-section__wrapper {
   background-color: #b1f5f5;
   border-radius: 0 40px 40px 40px;
@@ -662,10 +666,6 @@ keyVisual
 /* ----------------------------------------
 about
 ---------------------------------------- */
-.l-about {
-  margin-top: 60px;
-  padding: 0 4%;
-}
 .l-about__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -747,7 +747,7 @@ about
   position: relative;
   margin: 2rem 0;
   padding-left: 2rem;
-  border-left: 3px solid #093eff;
+  border-left: 4px solid #093eff;
 }
 .p-timeline__item {
   margin-bottom: 2rem;
@@ -782,35 +782,55 @@ about
 .p-accordion__wrapper {
   margin-top: 40px;
 }
+.p-accordion__wrapper--item {
+  margin-top: 40px;
+}
 
 .p-accordion__title {
   font-size: 1.6rem;
   padding: 16px 32px;
-  background-color: #f0f8ff;
+  background-color: #eee;
+  color: #093eff;
+  border: 4px solid #093eff;
+  border-radius: 8px;
+  cursor: pointer;
   position: relative;
 }
-.p-accordion__title::before {
+.p-accordion__title::after {
   content: "";
-  background: #093eff;
-  height: 2px;
-  width: 15px;
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
-  -webkit-transition: -webkit-transform 0.3s ease-in-out;
-  transition: -webkit-transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-top: solid 2px #093eff;
+  border-right: solid 2px #093eff;
+  -webkit-transition: top 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: top 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, top 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
   position: absolute;
   right: 25px;
-  top: 50%;
+  top: 38%;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+
+.p-accordion__title.open {
+  border-bottom: none;
+}
+
+.p-accordion__title.open::after {
+  top: 45%;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 .p-accordion__content {
   display: none;
   padding: 16px 32px;
-  border-bottom: 2px solid #093eff;
-  border-left: 2px solid #093eff;
-  border-right: 2px solid #093eff;
+  border-bottom: 4px solid #093eff;
+  border-left: 4px solid #093eff;
+  border-right: 4px solid #093eff;
+  background-color: #f0f8ff;
 }
 
 .p-accordion__text {
@@ -818,6 +838,9 @@ about
   line-height: 1.6;
 }
 
+/* ----------------------------------------
+work
+---------------------------------------- */
 /* ----------------------------------------
 footer
 ---------------------------------------- */
