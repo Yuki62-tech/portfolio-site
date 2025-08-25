@@ -37,19 +37,19 @@
                     </a>
                 </li>
                 <li class="p-nav__list--item">
-                    <a class="p-nav__list--link" href="#">
+                    <a class="p-nav__list--link" href="#about">
                         <i class="fa-regular fa-address-card p-nav__list--icon"></i>
                         About
                     </a>
                 </li>
                 <li class="p-nav__list--item">
-                    <a class="p-nav__list--link" href="#">
+                    <a class="p-nav__list--link" href="#work">
                         <i class="fa-solid fa-laptop p-nav__list--icon"></i>
                         Work
                     </a>
                 </li>
                 <li class="p-nav__list--item">
-                    <a class="p-nav__list--link" href="#">
+                    <a class="p-nav__list--link" href="#contact">
                         <i class="fa-regular fa-envelope p-nav__list--icon"></i>
                         Contact
                     </a>
@@ -108,9 +108,10 @@
             </div>
 
             <!-- about -->
-            <section class="l-about l-section">
+            <section id="about" class="l-about l-section">
                 <h2 class="p-section__title">ABOUT</h2>
                 <div class="l-section__wrapper">
+                    <h3 class="p-content__title">ABOUT ME</h3>
                     <div class="l-about__wrapper">
                         <div class="p-about__left">
                             <img class="p-about__left--image" src="./assets/images/handball.jpeg" alt="cat">
@@ -212,15 +213,118 @@
             <!-- /about -->
 
             <!-- work -->
-            <section class="l-work l-section">
+            <section id="work" class="l-work l-section">
                 <h2 class="p-section__title">WORK</h2>
-                <div class="l-section__wrapper">
+                <div class="l-section__wrapper p-mockup__wrapper">
+                    <div class="p-mockup">
+                        <img src="./assets/images/ABC-English-School.jpg" class="p-mockup__image"
+                            alt="ABC-English-School">
+                        <dl class="p-desc">
+                            <dt class="p-desc__term">名前:</dt>
+                            <dd class="p-desc__data">ABC-English-School</dd>
+                            <dt class="p-desc__term">使用技術:</dt>
+                            <dd class="p-desc__data">
+                                <ul class="p-desc__list">
+                                    <li class="p-desc__list--item">HTML,CSS</li>
+                                    <li class="p-desc__list--item">Sass</li>
+                                    <li class="p-desc__list--item">jQuery</li>
+                                </ul>
+                            </dd>
+                        </dl>
+                        <div class="p-mockup__label">
+                            <span class="p-mockup__label--item">架空のサイト</span>
+                        </div>
+                    </div>
+                    <div class="p-mockup">
+                        <img src="./assets/images/DESIGN_CAMPUS.jpg" class="p-mockup__image"
+                            alt="DESIGN_CAMPUS">
+                        <dl class="p-desc">
+                            <dt class="p-desc__term">名前:</dt>
+                            <dd class="p-desc__data">DESIGN_CAMPUS</dd>
+                            <dt class="p-desc__term">使用技術:</dt>
+                            <dd class="p-desc__data">
+                                <ul class="p-desc__list">
+                                    <li class="p-desc__list--item">HTML,CSS</li>
+                                    <li class="p-desc__list--item">Sass</li>
+                                    <li class="p-desc__list--item">jQuery</li>
+                                </ul>
+                            </dd>
+                        </dl>
+                        <div class="p-mockup__label">
+                            <span class="p-mockup__label--item">架空のサイト</span>
+                            <span class="p-mockup__label--item">LP</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- work -->
 
+            <!-- contact -->
+            <section id="contact" class="l-contact l-section">
+                <h2 class="p-section__title">CONTACT</h2>
+                <div class="l-section__wrapper l-contact__wrapper">
+                    <form class="p-form" action="">
+                        <table class="p-table">
+                            <tr class="p-table__row">
+                                <th class="p-table__head">
+                                    <label for="name" class="p-form__label">
+                                        お名前
+                                        <span class="p-form__label--require">必須</span>
+                                    </label>
+                                </th>
+                                <td class="p-table__data">
+                                    <input type="text" id="name" class="p-form__input" name="name" placeholder="例）山田太郎">
+                                </td>
+                            </tr>
+                            <tr class="p-table__row">
+                                <th class="p-table__head">
+                                    <label for="name" class="p-form__label">
+                                        お名前（フリガナ）
+                                        <span class="p-form__label--require">必須</span>
+                                    </label>
+                                </th>
+                                <td class="p-table__data">
+                                    <input type="text" id="name" class="p-form__input" name="name" placeholder="例）ヤマダタロウ">
+                                </td>
+                            </tr>
+                            <tr class="p-table__row">
+                                <th class="p-table__head">
+                                    <label for="email" class="p-form__label">
+                                        メールアドレス
+                                        <span class="p-form__label--require">必須</span>
+                                    </label>
+                                </th>
+                                <td class="p-table__data">
+                                    <input type="email" id="email" class="p-form__input" name="email" placeholder="例）example@gmail.com">
+                                </td>
+                            </tr>
+                            <tr class="p-table__row">
+                                <th class="p-table__head">
+                                    <label for="textarea" class="p-form__label">
+                                        お問合せ内容
+                                        <span class="p-form__label--require">必須</span>
+                                    </label>
+                                </th>
+                                <td class="p-table__data">
+                                    <textarea name="textarea" id="textarea" class="p-form__textarea" placeholder="例）お問合せ内容をご入力して下さい"></textarea>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="c-button">
+                            <button type="submit" class="c-button--item">
+                                送信する
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </section>
         </main>
         <footer class="l-footer">
-            フッター
+            <p class="p-footer">
+                <small class="p-footer__copyRight">
+                    &copy; 2025 Yuki Fukata
+                </small>
+            </p>
         </footer>
     </div>
 
