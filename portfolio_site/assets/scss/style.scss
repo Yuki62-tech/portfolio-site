@@ -19,10 +19,18 @@ utility
 ---------------------------------------- */
 .u-lineBreak::before {
     @include lineBreak;
+
+    @include media(sm) {
+        display: none;
+    }
 }
 
 .u-fontSize__lg {
     font-size: 1.8rem;
+}
+
+.u-border {
+    color: $base-color-secondary;
 }
 
 /* ----------------------------------------
@@ -38,6 +46,7 @@ component
         background-color: #fff;
         color: $base-color-secondary;
         padding: 20px 40px;
+        border: 4px solid $base-color-secondary;
         border-radius: $radius-size;
         box-shadow: 0 4px 5px rgba(0, 0, 0, 0.6);
 
@@ -45,6 +54,52 @@ component
             box-shadow: none;
             position: relative;
             top: 4px;
+        }
+    }
+}
+
+.c-toggle-btn {
+    display: none;
+
+    @include media(lg) {
+        display: block;
+        width: 80px;
+        height: 80px;
+        background-color: $base-color-primary;
+        border-radius: $radius-size;
+        position: relative;
+        cursor: pointer;
+    }
+
+    &__line {
+        @include media(lg) {
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: $base-color-secondary;
+            border-radius: $radius-size;
+            transition: all 0.4s;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        &:nth-child(1) {
+            @include media(lg) {
+                top: 20px;
+            }
+        }
+
+        &:nth-child(2) {
+            @include media(lg) {
+                top: calc(50% - 2px);
+            }
+        }
+
+        &:nth-child(3) {
+            @include media(lg) {
+                bottom: 20px;
+            }
         }
     }
 }
@@ -98,11 +153,15 @@ animations
 
 // scroll
 .u-scroll {
+    writing-mode: vertical-rl;
+    transform: translateX(-50%);
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
     bottom: 6%;
-    writing-mode: vertical-rl;
+
+    @include media(sm) {
+        left: 8%;
+    }
 
     &--text {
         font-size: 1.1rem;
@@ -111,16 +170,16 @@ animations
 }
 
 .u-scroll::before {
+    content: "";
     animation: scroll 2s infinite;
     background-color: $base-color-primary;
-    bottom: -115px;
-    content: "";
+    width: 1px;
     height: 100px;
-    left: 0;
     margin: auto;
     position: absolute;
+    left: 0;
+    bottom: -115px;
     right: 0;
-    width: 1px;
 }
 
 @keyframes scroll {
@@ -145,52 +204,125 @@ animations
     }
 }
 
+// burger
+.open .c-toggle-btn__line {
+    &:nth-child(1) {
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(-315deg);
+    }
+
+    &:nth-child(2) {
+        opacity: 0;
+    }
+
+    &:nth-child(3) {
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(315deg);
+    }
+}
+
+// sideBar
+.open .l-sideBar {
+    left: calc(100% - $sideBar-width);
+    opacity: 1;
+}
+
+// header background
+.scrolled.l-header {
+    background: rgba($color: $base-color-secondary, $alpha: 0.8);
+}
+
 /* ----------------------------------------
-sideBar
+header
 ---------------------------------------- */
-.l-sideBar {
-    height: 100vh;
-    width: $sideBar-size;
-    background-color: $base-color-primary;
+.l-header {
+    @include media(lg) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 100px;
+        padding: 0 4%;
+        transition: all 0.6s;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 2;
+    }
+}
+
+.p-title {
+    width: $sideBar-width;
+    height: $title-height;
+    background-color: $base-color-secondary;
+    text-align: center;
     position: fixed;
     top: 0;
     left: 0;
-}
-
-.p-sideBar__title {
-    width: $sideBar-size;
-    height: 120px;
-    background-color: $base-color-secondary;
-    text-align: center;
     @include gridCenter;
+
+    @include media(lg) {
+        width: 140px;
+        height: 80px;
+        background-color: $base-color-primary;
+        border-radius: $radius-size $radius-size 0 0;
+        position: static;
+    }
 
     &--link {
         display: block;
+        width: 100%;
         color: #fff;
         font-size: 2.8rem;
         font-weight: bold;
         padding: 16px;
+
+        @include media(lg) {
+            color: $base-color-secondary;
+            font-size: 1.8rem;
+            padding: 8px;
+        }
+    }
+}
+
+/* ----------------------------------------
+sideBar
+---------------------------------------- */
+.l-sideBar {
+    height: calc(100vh - $title-height);
+    width: $sideBar-width;
+    position: fixed;
+    top: $title-height;
+    left: 0;
+
+    @include media(lg) {
+        height: calc(100vh - 100px);
+        transition: all 0.4s;
+        position: fixed;
+        top: 100px;
+        left: 100%;
+        z-index: 3;
     }
 }
 
 .p-nav {
-    height: calc(100vh - 120px);
+    height: 100%;
+    background-color: $base-color-primary;
+
+    @include media(lg) {
+        border-radius: $radius-size 0 0 $radius-size;
+    }
 
     &__list {
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
-        height: calc(100vh - 120px);
+        justify-content: space-evenly;
+        height: 100%;
         padding: 0 16px;
 
         &--item {
             width: 100%;
             text-align: center;
-
-            &:nth-child(4) {
-                border-bottom: 2px solid $base-color-secondary;
-                padding-bottom: 40px;
-            }
         }
 
         &--link {
@@ -201,7 +333,7 @@ sideBar
             transition: all 0.4s;
 
             &:hover {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
                 background-color: $base-color-secondary;
                 color: $base-color-primary;
             }
@@ -226,17 +358,30 @@ keyVisual
     text-align: center;
     color: $base-color-primary;
     line-height: 1.8;
+    text-shadow: 6px 6px 6px $base-color-secondary;
+
+    @include media(xl) {
+        font-size: 3rem;
+    }
+
+    @include media(md) {
+        padding: 0 4%;
+    }
+
+    @include media(sm) {
+        font-size: 2rem;
+        text-align: left;
+        writing-mode: vertical-rl;
+        white-space: pre;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
 }
 
 /* ----------------------------------------
-about
+section
 ---------------------------------------- */
-.l-about__wrapper {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 32px;
-}
-
 .p-section__title {
     display: inline-block;
     font-size: 3rem;
@@ -245,32 +390,7 @@ about
     color: $base-color-secondary;
     border-bottom: none;
     border-radius: $radius-size-lg $radius-size-lg 0 0;
-    padding: 16px;
-}
-
-.p-about__left {
-    width: 180px;
-    height: 180px;
-
-    &--image {
-        object-fit: cover;
-        border-radius: 50%;
-    }
-}
-
-.p-about__right {
-    max-width: 600px;
-
-    &--text {
-        font-size: 1.1rem;
-        line-height: 1.6;
-    }
-
-    &--hobby {
-        font-size: 1.1rem;
-        line-height: 1.6;
-        margin-top: 16px;
-    }
+    padding: 16px 52px;
 }
 
 .p-content__title {
@@ -287,7 +407,7 @@ about
     &:first-child {
         margin-top: 0;
     }
-    
+
     &::before {
         content: "";
         display: block;
@@ -299,7 +419,7 @@ about
         top: 0;
         left: 0;
     }
-    
+
     &::after {
         content: "";
         display: block;
@@ -310,6 +430,55 @@ about
         position: absolute;
         bottom: 0;
         right: 0;
+    }
+}
+
+/* ----------------------------------------
+about
+---------------------------------------- */
+.l-about__wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 32px;
+
+    @include media(md) {
+        flex-direction: column;
+    }
+}
+
+.p-about__left {
+    width: 180px;
+    height: 180px;
+
+    @include media(md) {
+        margin: 0 auto 32px;
+    }
+
+    &--image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+}
+
+.p-about__right {
+    max-width: 580px;
+    margin-left: 40px;
+
+    @include media(md) {
+        margin-left: 0;
+    }
+
+    &--text {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+
+    &--hobby {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-top: 16px;
     }
 }
 
@@ -418,23 +587,55 @@ work
 ---------------------------------------- */
 .p-mockup__wrapper {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 24px;
+
+    @include media(md) {
+        flex-direction: column;
+    }
 }
 
 .p-mockup {
-    width: 420px;
+    width: 400px;
     height: auto;
     padding: 16px;
     color: #fff;
     background-color: $base-color-secondary;
     border-radius: $radius-size;
+    text-align: center;
     transition: transform 0.4s ease;
     cursor: pointer;
 
+    @include media(md) {
+        width: 80%;
+        margin: 32px auto 0;
+    }
+
     &:hover {
         transform: scale(1.1);
+    }
+
+    &__title {
+        font-size: 1.6rem;
+        line-height: 1.6;
+        margin-top: 12px;
+
+        @include media(xl) {
+            font-size: 1.4rem;
+        }
+    }
+
+    &__list {
+        margin: 12px;
+
+        &--item {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            border: 2px solid $base-color-primary;
+            border-radius: $radius-size;
+            padding: 8px;
+            margin: 8px 0;
+        }
     }
 
     &__image {
@@ -483,15 +684,15 @@ work
 contact
 ---------------------------------------- */
 .p-form {
-    background-color: $base-color-secondary;
+    background-color: #eee;
     border-radius: $radius-size;
     padding: 16px;
 
     &__label {
         display: inline-block;
         font-size: 1.4rem;
-        background-color: $content-bg-color;
-        border: 4px solid $base-color-primary;
+        background-color: #fff;
+        border: 4px solid $base-color-secondary;
         border-radius: $radius-size;
         padding: 12px;
         margin-bottom: 12px;
@@ -511,8 +712,8 @@ contact
     &__textarea {
         width: 100%;
         font-size: 1.4rem;
-        background-color: $content-bg-color;
-        border: 4px solid $base-color-primary;
+        background-color: #fff;
+        border: 4px solid $base-color-secondary;
         border-radius: $radius-size;
         padding: 12px;
         cursor: pointer;
@@ -525,7 +726,7 @@ contact
 
 .p-table {
     width: 100%;
-    
+
     &__row {
         display: flex;
         flex-direction: column;

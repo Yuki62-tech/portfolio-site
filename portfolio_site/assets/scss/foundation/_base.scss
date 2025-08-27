@@ -1,5 +1,6 @@
 @charset "utf-8";
 @use "./variables" as *;
+@use "./mixin" as *;
 
 html {
     scroll-behavior: smooth;
@@ -26,12 +27,16 @@ img {
 }
 
 .l-container {
-    width: calc(100% - $sideBar-size);
+    width: calc(100% - $sideBar-width);
     margin-left: auto;
+    background: linear-gradient(60deg, rgba(84, 58, 183, 1) 0%, rgba(0, 172, 193, 1) 100%);
+
+    @include media(lg) {
+        width: 100%;
+    }
 }
 
 .l-keyVisual__wrapper {
-    // animation
     background: linear-gradient(60deg, rgba(84, 58, 183, 1) 0%, rgba(0, 172, 193, 1) 100%);
 }
 
@@ -42,6 +47,6 @@ img {
     &__wrapper {
         background-color: $base-color-primary;
         border-radius: 0 $radius-size-lg $radius-size-lg $radius-size-lg;
-        padding: 32px 12%;
+        padding: 32px 8%;
     }
 }
