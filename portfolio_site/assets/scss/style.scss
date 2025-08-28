@@ -27,6 +27,7 @@ utility
 
 .u-fontSize__lg {
     font-size: 1.8rem;
+    background: linear-gradient(transparent 80%, $base-color-secondary);
 }
 
 .u-border {
@@ -40,7 +41,7 @@ component
     text-align: center;
     margin-top: 40px;
 
-    &--item {
+    &__item {
         font-size: 1.4rem;
         font-weight: bold;
         background-color: #fff;
@@ -54,6 +55,15 @@ component
             box-shadow: none;
             position: relative;
             top: 4px;
+        }
+
+        &--sub {
+            @extend .c-button__item;
+            display: inline-block;
+            font-size: 1.1rem;
+            padding: 8px 12px;
+            margin-top: 20px;
+            
         }
     }
 }
@@ -273,7 +283,7 @@ header
         display: block;
         width: 100%;
         color: #fff;
-        font-size: 2.8rem;
+        font-size: 2.2rem;
         font-weight: bold;
         padding: 16px;
 
@@ -327,13 +337,13 @@ sideBar
 
         &--link {
             display: block;
-            font-size: 1.4rem;
+            font-size: 1.1rem;
             border-radius: $radius-size $radius-size 0 0;
             padding: 16px;
             transition: all 0.4s;
 
             &:hover {
-                font-size: 1.6rem;
+                font-size: 1.2rem;
                 background-color: $base-color-secondary;
                 color: $base-color-primary;
             }
@@ -352,24 +362,21 @@ keyVisual
 }
 
 .p-catchCopy {
-    font-size: 3.8rem;
+    font-size: 3rem;
     font-weight: bold;
+    font-style: italic;
     padding: 0 12%;
     text-align: center;
     color: $base-color-primary;
     line-height: 1.8;
     text-shadow: 6px 6px 6px $base-color-secondary;
 
-    @include media(xl) {
-        font-size: 3rem;
-    }
-
-    @include media(md) {
+    @include media(lg) {
         padding: 0 4%;
     }
 
     @include media(sm) {
-        font-size: 2rem;
+        font-size: 1.6rem;
         text-align: left;
         writing-mode: vertical-rl;
         white-space: pre;
@@ -386,6 +393,7 @@ section
     display: inline-block;
     font-size: 3rem;
     font-weight: bold;
+    font-style: italic;
     background-color: $base-color-primary;
     color: $base-color-secondary;
     border-bottom: none;
@@ -596,6 +604,7 @@ work
 }
 
 .p-mockup {
+    display: block;
     width: 400px;
     height: auto;
     padding: 16px;
@@ -603,16 +612,11 @@ work
     background-color: $base-color-secondary;
     border-radius: $radius-size;
     text-align: center;
-    transition: transform 0.4s ease;
     cursor: pointer;
 
     @include media(md) {
         width: 80%;
         margin: 32px auto 0;
-    }
-
-    &:hover {
-        transform: scale(1.1);
     }
 
     &__title {
@@ -639,8 +643,21 @@ work
     }
 
     &__image {
-        object-fit: cover;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
         border-radius: $radius-size;
+
+        &--item {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            transition: transform 0.4s ease-in-out;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
     }
 
     &__label {
@@ -660,29 +677,13 @@ work
     }
 }
 
-.p-desc {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 16px;
-
-    &__term {
-        width: 32%;
-        font-size: 1.1rem;
-        line-height: 1.5;
-        margin-bottom: 8px;
-    }
-
-    &__data {
-        width: 68%;
-        font-size: 1.4rem;
-        line-height: 1.5;
-        margin-bottom: 8px;
-    }
-}
-
 /* ----------------------------------------
 contact
 ---------------------------------------- */
+.l-contact__wrapper {
+    margin-bottom: 72px;
+}
+
 .p-form {
     background-color: #eee;
     border-radius: $radius-size;
@@ -747,15 +748,93 @@ footer
 ---------------------------------------- */
 .l-footer {
     width: 100%;
+    height: 80px;
     background-color: $base-color-primary;
-    margin-top: 72px;
+    @include gridCenter;
 }
 
-.p-footer {
-    padding: 20px 0;
-    text-align: center;
+.p-footer__copyRight {
+    font-size: 0.8rem;
+}
 
-    &__copyRight {
-        font-size: 0.8rem;
+/* ----------------------------------------
+notFound
+---------------------------------------- */
+.l-notFound__wrapper {
+    width: 80%;
+    height: calc(86vh - 80px);
+    margin: 0 auto;
+    border-radius: $radius-size-lg;
+    @include gridCenter;
+}
+
+.p-notFound__title {
+    color: $base-color-secondary;
+    text-shadow: 6px 6px 6px #fff;
+}
+
+.p-notFound__text {
+    font-size: 1.2rem;
+    color: $base-color-secondary;
+    line-height: 1.6;
+}
+
+/* ----------------------------------------
+ABC-English-School--subPage
+---------------------------------------- */
+.p-subPage__wrapper {
+    background: linear-gradient(60deg, rgba(84, 58, 183, 1) 0%, rgba(0, 172, 193, 1) 100%);
+    padding: 80px 4%;
+
+    &--sub {
+        margin-top: 0;
+        padding: 0 4%;
+    }
+
+    .p-subPage__container {
+        background-color: $base-color-primary;
+        border-radius: 0 0 $radius-size-lg $radius-size-lg;
+        padding: 32px 4%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        @include media(lg) {
+            flex-direction: column;
+        }
+
+    }
+
+    .p-subPage__image {
+        width: 400px;
+        height: 260px;
+        border: 6px solid $base-color-secondary;
+        border-radius: $radius-size;
+    }
+}
+
+.p-desc {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 16px 0 0 24px;
+    width: 400px;
+
+    @include media(sm) {
+        width: 360px;
+        margin: 16px auto;
+    }
+
+    &__term {
+        width: 20%;
+        font-size: 1.1rem;
+        line-height: 1.5;
+        margin-bottom: 12px;
+    }
+
+    &__data {
+        width: 80%;
+        font-size: 1.2rem;
+        line-height: 1.5;
+        margin-bottom: 12px;
     }
 }
