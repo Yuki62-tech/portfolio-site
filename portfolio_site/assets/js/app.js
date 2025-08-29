@@ -1,5 +1,5 @@
 
-$(function () {
+jQuery(function($) {
 
   $(window).on("scroll", function () {
     // header background

@@ -1,0 +1,10 @@
+@charset "utf-8";
+@use "../../foundation/mixin" as *;
+
+.u-lineBreak::before {
+    @include lineBreak;
+
+    @include media(sm) {
+        display: none;
+    }
+}

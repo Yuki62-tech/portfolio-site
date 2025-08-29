@@ -1,0 +1,58 @@
+@charset "utf-8";
+@use "../foundation/variables" as *;
+@use "../foundation/mixin" as *;
+
+/* ----------------------------------------
+section
+---------------------------------------- */
+.l-section {
+    margin-top: 60px;
+    padding: 0 4%;
+
+    &__wrapper {
+        background-color: $base-color-primary;
+        border-radius: 0 $radius-size-lg $radius-size-lg $radius-size-lg;
+        padding: 32px 8%;
+    }
+}
+
+/* ----------------------------------------
+keyVisual
+---------------------------------------- */
+.l-keyVisual {
+    height: 85vh;
+    width: 100%;
+    position: relative;
+    @include flexCenter;
+}
+
+/* ----------------------------------------
+about
+---------------------------------------- */
+.l-about__wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 32px;
+
+    @include media(md) {
+        flex-direction: column;
+    }
+}
+
+/* ----------------------------------------
+work
+---------------------------------------- */
+.l-work {
+    margin-bottom: 60px;
+}
+
+/* ----------------------------------------
+notFound
+---------------------------------------- */
+.l-notFound__wrapper {
+    width: 80%;
+    height: calc(86vh - 80px);
+    margin: 0 auto;
+    border-radius: $radius-size-lg;
+    @include gridCenter;
+}

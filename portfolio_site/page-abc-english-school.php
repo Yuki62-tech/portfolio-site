@@ -24,8 +24,13 @@
                 </dd>
             </dl>
         </div>
-        <div class="c-button">
-            <a href="<?php echo home_url('/') ?>" class="c-button__item">TOPへ戻る</a>
+        <div class="c-button__wrapper">
+            <div class="c-button">
+                <a href="<?php echo home_url('/#work') ?>" class="c-button__item">TOPへ戻る</a>
+            </div>
+            <div class="c-button">
+                <a href="<?php echo home_url('#') ?>" class="c-button__item">サイトページへ</a>
+            </div>
         </div>
     </section>
 </div>

@@ -134,6 +134,17 @@
                     </p>
                 </div>
             </div>
+             <div class="p-accordion__wrapper--item">
+                <h4 class="p-accordion__title js-accordion-title">
+                    WordPress
+                </h4>
+                <div class="p-accordion__content">
+                    <p class="p-accordion__text">
+                        オリジナルテーマでの開発ができます。
+                        プラグインを使用してコンタクトフォームの実装も出来ます。
+                    </p>
+                </div>
+            </div>
             <div class="p-accordion__wrapper--item">
                 <h4 class="p-accordion__title js-accordion-title">
                     Figma
@@ -201,78 +212,5 @@
 </section>
 <!-- work -->
 
-<!-- contact -->
-<section id="contact" class="l-contact l-section">
-    <h2 class="p-section__title">CONTACT</h2>
-    <div class="l-section__wrapper l-contact__wrapper">
-        <form class="p-form" action="">
-            <table class="p-table">
-                <tr class="p-table__row">
-                    <th class="p-table__head">
-                        <label for="name" class="p-form__label">
-                            お名前
-                            <span class="p-form__label--require">必須</span>
-                        </label>
-                    </th>
-                    <td class="p-table__data">
-                        <input type="text" id="name" class="p-form__input" name="name" placeholder="例）山田太郎">
-                    </td>
-                </tr>
-                <tr class="p-table__row">
-                    <th class="p-table__head">
-                        <label for="name" class="p-form__label">
-                            お名前（フリガナ）
-                            <span class="p-form__label--require">必須</span>
-                        </label>
-                    </th>
-                    <td class="p-table__data">
-                        <input type="text" id="name" class="p-form__input" name="name"
-                            placeholder="例）ヤマダタロウ">
-                    </td>
-                </tr>
-                <tr class="p-table__row">
-                    <th class="p-table__head">
-                        <label for="email" class="p-form__label">
-                            メールアドレス
-                            <span class="p-form__label--require">必須</span>
-                        </label>
-                    </th>
-                    <td class="p-table__data">
-                        <input type="email" id="email" class="p-form__input" name="email"
-                            placeholder="例）example@gmail.com">
-                    </td>
-                </tr>
-                <tr class="p-table__row">
-                    <th class="p-table__head">
-                        <label for="subject" class="p-form__label">
-                            件名
-                        </label>
-                    </th>
-                    <td class="p-table__data">
-                        <input type="text" id="subject" class="p-form__input" name="subject"
-                            placeholder="例）件名">
-                    </td>
-                </tr>
-                <tr class="p-table__row">
-                    <th class="p-table__head">
-                        <label for="textarea" class="p-form__label">
-                            お問合せ内容
-                            <span class="p-form__label--require">必須</span>
-                        </label>
-                    </th>
-                    <td class="p-table__data">
-                        <textarea name="textarea" id="textarea" class="p-form__textarea"
-                            placeholder="例）お問合せ内容をご入力して下さい"></textarea>
-                    </td>
-                </tr>
-            </table>
-            <div class="c-button">
-                <button type="submit" class="c-button__item">
-                    送信する
-                </button>
-            </div>
-        </form>
-    </div>
-</section>
 
 <?php get_footer(); ?>

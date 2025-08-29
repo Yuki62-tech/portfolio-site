@@ -1,0 +1,27 @@
+@charset "utf-8";
+@use "../foundation/variables" as *;
+@use "../foundation/mixin" as *;
+
+
+
+.l-container {
+    width: calc(100% - $sideBar-width);
+    margin-left: auto;
+    background: linear-gradient(60deg, rgba(84, 58, 183, 1) 0%, rgba(0, 172, 193, 1) 100%);
+
+    @include media(lg) {
+        width: 100%;
+    }
+}
+
+.l-subPage {
+    width: 100%;
+}
+
+.l-keyVisual__wrapper {
+    background: linear-gradient(60deg, rgba(84, 58, 183, 1) 0%, rgba(0, 172, 193, 1) 100%);
+
+    &--subPage {
+        padding-top: 60px;
+    }
+}

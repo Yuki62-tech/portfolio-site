@@ -26,35 +26,3 @@ img {
     vertical-align: bottom;
 }
 
-.l-container {
-    width: calc(100% - $sideBar-width);
-    margin-left: auto;
-    background: linear-gradient(60deg, rgba(84, 58, 183, 1) 0%, rgba(0, 172, 193, 1) 100%);
-
-    @include media(lg) {
-        width: 100%;
-    }
-}
-
-.l-subPage {
-    width: 100%;
-}
-
-.l-keyVisual__wrapper {
-    background: linear-gradient(60deg, rgba(84, 58, 183, 1) 0%, rgba(0, 172, 193, 1) 100%);
-
-    &--subPage {
-        padding-top: 60px;
-    }
-}
-
-.l-section {
-    margin-top: 60px;
-    padding: 0 4%;
-
-    &__wrapper {
-        background-color: $base-color-primary;
-        border-radius: 0 $radius-size-lg $radius-size-lg $radius-size-lg;
-        padding: 32px 8%;
-    }
-}

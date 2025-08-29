@@ -1,0 +1,7 @@
+@charset "utf-8";
+@use "../../foundation/variables" as *;
+
+.u-fontSize__lg {
+    font-size: 1.8rem;
+    background: linear-gradient(transparent 80%, $base-color-secondary);
+}
