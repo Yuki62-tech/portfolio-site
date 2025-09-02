@@ -1143,7 +1143,6 @@ work
   background-color: #093eff;
   border-radius: 8px;
   text-align: center;
-  cursor: pointer;
 }
 @media screen and (max-width: 768px) {
   .p-mockup {
@@ -1223,7 +1222,6 @@ contact
   border-radius: 8px;
   padding: 12px;
   margin-bottom: 12px;
-  cursor: pointer;
 }
 .p-form__label--require {
   font-size: 1.1rem;

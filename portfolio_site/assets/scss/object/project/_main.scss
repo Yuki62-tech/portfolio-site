@@ -322,7 +322,6 @@ work
     background-color: $base-color-secondary;
     border-radius: $radius-size;
     text-align: center;
-    cursor: pointer;
 
     @include media(md) {
         width: 80%;
@@ -403,7 +402,6 @@ contact
         border-radius: $radius-size;
         padding: 12px;
         margin-bottom: 12px;
-        cursor: pointer;
 
         &--require {
             font-size: 1.1rem;

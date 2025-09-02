@@ -178,7 +178,13 @@
                     Sass
                 </li>
                 <li class="p-mockup__list--item">
+                    JavaScript
+                </li>
+                <li class="p-mockup__list--item">
                     jQuery
+                </li>
+                <li class="p-mockup__list--item">
+                    WordPress
                 </li>
             </ul>
             <div class="p-mockup__label">
@@ -201,12 +207,40 @@
                 <li class="p-mockup__list--item">
                     JavaScript
                 </li>
+                <li class="p-mockup__list--item">
+                    jQuery
+                </li>
             </ul>
             <div class="p-mockup__label">
                 <span class="p-mockup__label--item">架空のサイト</span>
                 <span class="p-mockup__label--item">LP</span>
             </div>
             <a href="<?php echo home_url('/design_campus/') ?>" class="c-button__item--sub">詳細を見る</a>
+        </div>
+        <div class="p-mockup">
+            <div class="p-mockup__image">
+                <img src="<?php echo get_theme_file_uri('./assets/images/portfolio-site.jpg'); ?>" class="p-mockup__image--item"
+                    alt="Portfolio-site">
+            </div>
+            <h3 class="p-mockup__title">Portfolio-site</h3>
+            <ul class="p-mockup__list">
+                <li class="p-mockup__list--item">
+                    HTML,CSS
+                </li>
+                <li class="p-mockup__list--item">
+                    Sass
+                </li>
+                <li class="p-mockup__list--item">
+                    jQuery
+                </li>
+                <li class="p-mockup__list--item">
+                    WordPress
+                </li>
+            </ul>
+            <div class="p-mockup__label">
+                <span class="p-mockup__label--item">Portfolioサイト</span>
+            </div>
+            <a href="<?php echo home_url('/portfolio-site') ?>" class="c-button__item--sub">詳細を見る</a>
         </div>
     </div>
 </section>
