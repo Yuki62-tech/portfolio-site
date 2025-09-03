@@ -166,7 +166,9 @@ about
 ---------------------------------------- */
 .p-about__left {
     width: 180px;
+    min-width: 160px;
     height: 180px;
+    min-height: 160px;
 
     @include media(md) {
         margin: 0 auto 32px;
@@ -305,8 +307,13 @@ work
 ---------------------------------------- */
 .p-mockup__wrapper {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    flex-wrap: wrap;
     gap: 24px;
+
+    @include media(xl) {
+        justify-content: center;
+    }
 
     @include media(md) {
         flex-direction: column;
@@ -315,7 +322,7 @@ work
 
 .p-mockup {
     display: block;
-    width: 400px;
+    width: 360px;
     height: auto;
     padding: 16px;
     color: #fff;
@@ -506,10 +513,9 @@ ABC-English-School--subPage
     display: flex;
     flex-wrap: wrap;
     margin: 16px 0 0 24px;
-    width: 400px;
+    max-width: 400px;
 
     @include media(sm) {
-        width: 360px;
         margin: 16px auto;
     }
 

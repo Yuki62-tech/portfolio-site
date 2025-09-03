@@ -7,9 +7,10 @@ component
 ---------------------------------------- */
 .c-button__wrapper {
     display: flex;
-    justify-content: center;
-    gap: 24px;
+    flex-direction: column;
+    gap: 40px;
 }
+
 
 .c-button {
     text-align: center;

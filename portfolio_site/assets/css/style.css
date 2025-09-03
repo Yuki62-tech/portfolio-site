@@ -723,10 +723,11 @@ component
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: 24px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 40px;
 }
 
 .c-button {
@@ -981,7 +982,9 @@ about
 ---------------------------------------- */
 .p-about__left {
   width: 180px;
+  min-width: 160px;
   height: 180px;
+  min-height: 160px;
 }
 @media screen and (max-width: 768px) {
   .p-about__left {
@@ -1120,10 +1123,19 @@ work
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   gap: 24px;
+}
+@media screen and (max-width: 1200px) {
+  .p-mockup__wrapper {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 @media screen and (max-width: 768px) {
   .p-mockup__wrapper {
@@ -1136,7 +1148,7 @@ work
 
 .p-mockup {
   display: block;
-  width: 400px;
+  width: 360px;
   height: auto;
   padding: 16px;
   color: #fff;
@@ -1332,11 +1344,10 @@ ABC-English-School--subPage
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin: 16px 0 0 24px;
-  width: 400px;
+  max-width: 400px;
 }
 @media screen and (max-width: 576px) {
   .p-desc {
-    width: 360px;
     margin: 16px auto;
   }
 }
