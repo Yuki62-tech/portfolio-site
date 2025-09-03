@@ -2,10 +2,11 @@
 
 ## 概要
 このWebサイトは、個人のWeb制作ポートフォリオサイトです。レスポンシブ対応しています。 
-HTML、CSS、JavaScript、WordPressを使用してシンプルで美しいデザインを実現しています。
+WordPressで制作しており、コンタクトフォームはContact Form7で制作しています。
+HTML、CSS、JavaScript(jQuery)、WordPressを使用してシンプルで美しいデザインを実現しています。
 
 ## デモ
-- サイトURL:　
+- サイトURL:　https://fukata-portfolio.com/
 
 ## 使用技術
 - HTML5
